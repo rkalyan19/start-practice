@@ -1,0 +1,16 @@
+<h1 [style.text-align]="'center'"> Can You Do It? </h1>
+name: <input type="text" [(ngModel)]="username"><br>
+age:  <input type="number" [(ngModel)]= "age" > 
+country: <input type="text"[(ngModel)]= "country"><br>
+<button (click)="afterClicking(username)">Click Here</button>
+<h2 [style.color] = "'dodgerblue'" *ngIf="valueEntered; else elseBlock">  welcome {{name | titlecase}} </h2>
+<ng-template #elseBlock><h2 [style.color]="'red'">please enter playername</h2></ng-template>
+<div *ngIf="startedPlaying; else startBlock">
+
+<app-guess-app [parentData]="name"></app-guess-app>
+<app-players [playersParentData]= "playersData"></app-players>
+<app-player-details [playerDetailsPD] ="playerDetails"></app-player-details>
+
+</div>
+
+<ng-template #startBlock> <h2>Enter details!!</h2></ng-template>
