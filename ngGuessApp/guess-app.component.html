@@ -1,0 +1,12 @@
+
+<h3>Lets start guessing</h3>
+<p>Guess number from 1 to 10 !!</p>
+<input type="number" [(ngModel)]="valueEntered">
+<button (click)="clickVerify()">Verify</button>
+<button (click)="clickRestart()">Restart</button><br>
+<h3 [style.color]="hasWon ? 'green' :'red'">{{resultGuess}}</h3>
+
+<h4 *ngIf="hasWon; else triesBlock"> {{parentData}}  You tried : {{yourTrials}} times<h4>
+<ng-template #triesBlock><h4> No of tries: {{noOfTries}} </h4> </ng-template>
+   
+
