@@ -1,0 +1,2 @@
+<button [style.text-align]="'center'" (click)= "showPlayerDetails()">Show player details</button>
+<h3 *ngFor = "let x of playerDetails"> {{x.name}} {{x.age}}{{x.country}}</h3>
